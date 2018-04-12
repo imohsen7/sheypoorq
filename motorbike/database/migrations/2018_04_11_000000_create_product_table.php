@@ -18,7 +18,7 @@ class CreateProductTable extends Migration
             $table->string('model');
             $table->string('weight');
             $table->string('price');
-            $table->blob('proimage');
+            $table->string('proimage');
             $table->timestamps();
         });
     }

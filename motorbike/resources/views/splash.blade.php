@@ -7,8 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3> پروژه TestCase </h3>
-					
-					@include('filters');
+					@if ( count($products )>0)
+						@include('filters');
 					
 					<table class="table table-striped">
 					  <thead >
@@ -22,7 +22,7 @@
 						  <th scope="col">تصویر</th>
 						</tr>
 					  </thead>
-						@if ( $products )
+						
 						<tbody>
 						@foreach ($products as $key => $item )
 							<tr>
@@ -36,8 +36,10 @@
 							  
 							</tr>
 						@endforeach	
-					@endif
 					</table>
+					@else
+						محصولی جهت نمایش وجود ندارد
+					@endif
 					@if($products instanceof \Illuminate\Pagination\LengthAwarePaginator)
 						{{$products->links()}}
 					@endif

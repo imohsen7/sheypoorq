@@ -48,7 +48,6 @@ class HomeController extends Controller
 			$products = $this->motorbike->getProductList($r->except('_token'));
 		}
 		
-		
 		return view('splash' , [ 'products' => $products , 'model_list' => $model_list]);
 	}
 	
